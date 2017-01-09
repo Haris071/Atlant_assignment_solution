@@ -1,0 +1,20 @@
+/*this is a forward Geocoding Smoke test
+input URL used for this test is : https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyB6NCE1hhq77hzxlcJIAaH5G47YJULcnI0&address=Dalmatinska+Sarajevo
+this is written in Postman tool */
+
+function testJSON(data){
+    try{
+        var d = JSON.parse(responseBody);
+        return true;
+    }
+    catch (error){
+        return false;
+    }
+}
+
+
+tests["test_1: location key is found in response body"] = responseBody.has("location");
+
+tests["test_2: latitude key is found in response body"] = responseBody.has("lat");
+
+tests["test_3: longitude key is found in response body"] = responseBody.has("lng");
